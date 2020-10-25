@@ -44,6 +44,13 @@ def get_digit_place(num):
         current_place *= 10
     return digit_places
 
+def get_3char_batches(num):
+    s = str(num)
+    batches = []
+    while s:
+        batches.append(s[-3:])
+        s = s[:-3]
+    return batches[::-1]
 
 # 345 is three hundred and forty-five
 # 59,321 is fifty nine thousand, three hundred and twenty one
@@ -52,8 +59,8 @@ def get_digit_place(num):
 
 
 def main(num):
-   digit_places = get_digit_place(num)
-   pass
+    _3char_batches = get_3char_batches(num)
+    pass
 
 if __name__ == '__main__':
     print(main(sys.argv[1]))    
